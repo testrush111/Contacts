@@ -16,10 +16,8 @@ import java.io.IOException;
 
 public class SDCard {
     private String filename ,str;
-    private final Context context;
-    SDCard(String filename, Context context){
+    SDCard(String filename){
         this.filename = filename;
-        this.context = context;
     }
     public String getJsonId(){
         return str;
@@ -46,7 +44,6 @@ public class SDCard {
         try{
             FileOutputStream fos = new FileOutputStream(f);
             fos.write(data.getBytes());
-            Toast.makeText(context,"備份成功",Toast.LENGTH_LONG).show();
             fos.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

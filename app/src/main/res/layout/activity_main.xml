@@ -21,15 +21,17 @@
         android:layout_marginEnd="8dp" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn_savaSD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Write to SD"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="33dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:text="備份聯絡人"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="33dp" />
+        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btn_returnContacts" />
 
     <ListView
         android:id="@+id/listview1"
@@ -39,9 +41,18 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="-7dp"
-        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_savaSD"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:layout_constraintVertical_bias="0.457" />
+
+    <Button
+        android:id="@+id/btn_returnContacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="65dp"
+        android:text="還原聯絡人"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_savaSD" />
 </android.support.constraint.ConstraintLayout>
