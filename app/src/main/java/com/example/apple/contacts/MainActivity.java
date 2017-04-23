@@ -41,9 +41,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 JSONArray jsonMainArr = null;
                 try {
-                    jsonMainArr = contacts.jsonContacts.getJSONArray("contacts");
+                    jsonMainArr = sdCard.getJsonId().getJSONArray("contacts");
+//                    jsonMainArr = contacts.jsonContacts.getJSONArray("contacts");
                     //取得聯絡人資訊並且還原
-                    contacts.WritePhoneContact(jsonMainArr.getJSONObject(0).getString("name"),"4467",MainActivity.this);
+                    for(int i=0;i<jsonMainArr.length();i++){
+                        contacts.WritePhoneContact(jsonMainArr.getJSONObject(i).getString("name"),
+                                jsonMainArr.getJSONObject(i).getString("phoneNumber"),MainActivity.this);
+                    }
                     //備份後畫面更新
                     try {
                         contacts.show();

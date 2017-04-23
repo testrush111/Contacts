@@ -4,6 +4,9 @@ import android.content.Context;
 import android.os.Environment;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,10 +22,12 @@ public class SDCard {
     SDCard(String filename){
         this.filename = filename;
     }
-    public String getJsonId(){
-        return str;
+    public JSONObject getJsonId() throws JSONException {
+        showSD();
+        JSONObject jsonObj = new JSONObject(str);
+        return jsonObj;
     }
-    public void showSD(){
+    private void showSD(){
         try{
             File sdCard = Environment.getExternalStorageDirectory();
             File f = new File(sdCard,filename);
