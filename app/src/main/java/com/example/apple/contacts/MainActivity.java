@@ -1,12 +1,9 @@
 package com.example.apple.contacts;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -15,7 +12,7 @@ import org.json.JSONException;
 public class MainActivity extends AppCompatActivity {
     //測試commit
     ListView listView;
-    String filename = "test2";
+    String filename = "test";
     SDCard sdCard = null;
     Contacts contacts = null;
     @Override

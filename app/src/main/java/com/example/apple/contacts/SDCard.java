@@ -32,7 +32,7 @@ public class SDCard {
             File sdCard = Environment.getExternalStorageDirectory();
             File f = new File(sdCard,filename);
             FileInputStream in = new FileInputStream(f);
-            byte[] data = new byte[128];
+            byte[] data = new byte[10240];
             in.read(data);
             in.close();
 
