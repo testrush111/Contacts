@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class Contacts {
     public JSONObject jsonContacts = new JSONObject();
     private ContentResolver resolver;
-    private final Context context;
+    private final Context TTTTT;
     private ArrayAdapter<String> listAdapter;
     private String id
             ,name

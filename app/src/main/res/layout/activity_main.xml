@@ -11,27 +11,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="33dp"
-        android:layout_marginLeft="0dp"
         android:layout_marginRight="8dp"
         android:onClick="btn_savaSD"
         android:text="備份聯絡人"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.657"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/btn_returnContacts" />
+        app:layout_constraintRight_toLeftOf="@+id/btn_returnContacts"
+        android:layout_marginEnd="8dp" />
 
     <ListView
         android:id="@+id/listview1"
-        android:layout_width="271dp"
+        android:layout_width="0dp"
         android:layout_height="262dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="56dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_savaSD"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/btn_returnContacts"
@@ -41,5 +44,20 @@
         android:onClick="btn_returnContacts"
         android:text="還原聯絡人"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn_savaSD"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="65dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="@style/?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listview1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
 </android.support.constraint.ConstraintLayout>
