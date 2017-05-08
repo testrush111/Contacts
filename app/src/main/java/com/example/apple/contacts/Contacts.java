@@ -25,8 +25,9 @@ import java.util.ArrayList;
 public class Contacts {
     public JSONObject jsonContacts = new JSONObject();
     private ContentResolver resolver;
-    private final Context TTTTT;
+    private final Context context;
     private ArrayAdapter<String> listAdapter;
+    private String[] list;
     private String id
             ,name
             ,email
@@ -41,7 +42,7 @@ public class Contacts {
     public JSONArray getJsonId(){
         return jsonId;
     }
-    public void show() throws JSONException {
+    public void recovery() throws JSONException {
         Cursor cursor =
                 resolver.query(ContactsContract.Contacts.CONTENT_URI,null,null,null,null);
         String allData = "";
@@ -88,7 +89,7 @@ public class Contacts {
             }
         }
 
-        String[] list = new String[jsonId.length()];
+        list = new String[jsonId.length()];
         //parse Json
         for (int i=0;i<jsonId.length();i++) {
             String info="";
@@ -101,11 +102,10 @@ public class Contacts {
             list[i] = info;
         }
 
-
+    }
+    public void show(){
         listAdapter = new ArrayAdapter(context,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(listAdapter);
-
-
     }
     public void WritePhoneContact(String displayName, String number,Context cntx /*App or Activity Ctx*/)
     {
@@ -117,7 +117,7 @@ public class Contacts {
         int contactIndex = cntProOper.size();//ContactSize
 
         //Newly Inserted contact
-     // A raw contact will be inserted ContactsContract.RawContacts table in contacts database.
+        // A raw contact will be inserted ContactsContract.RawContacts table in contacts database.
         cntProOper.add(ContentProviderOperation.newInsert(ContactsContract.RawContacts.CONTENT_URI)//Step1
                 .withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null)
                 .withValue(ContactsContract.RawContacts.ACCOUNT_NAME, null).build());
